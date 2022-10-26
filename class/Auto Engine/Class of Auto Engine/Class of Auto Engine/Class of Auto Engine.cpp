@@ -8,6 +8,9 @@ using namespace std;//Пространство имен
 
 int main()
 {
-  
+	Engine AutoEngine;
+	AutoEngine.setModelEngine("Subaru");
+	AutoEngine.getModelEngine();
+
 }
 
