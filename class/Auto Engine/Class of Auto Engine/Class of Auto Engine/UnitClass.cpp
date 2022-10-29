@@ -1,3 +1,6 @@
+/// @author Rychkov R.V
+/// Реализация класса "Двигатель автомобиля"
+
 #include "Class.h"
 
 using namespace std;

@@ -1,3 +1,6 @@
+/// @author Rychkov R.V
+/// Реализация класса "Двигатель автомобиля"
+
 #include <string>
 #include <stdexcept>
 using namespace std;
