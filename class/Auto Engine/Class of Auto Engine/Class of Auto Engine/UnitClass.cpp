@@ -22,7 +22,7 @@ void Engine::setEngineCapacity(const string &EC) {
 }
 
 //Прочитать объем двигателя
-const string Engine :: getEngineCapacity() {
+string Engine :: getEngineCapacity() const {
 	return EngineCapacity;
 }
 
@@ -35,7 +35,7 @@ void Engine::setPowerSupplySystem(const string &PSS) {
 }
 
 //Прочитать систему питания
-const string Engine::getPowerSupplySystem() {
+string Engine::getPowerSupplySystem() const {
 	return PowerSupplySystem;
 }
 
@@ -48,7 +48,7 @@ void Engine::setFuel(const string &F) {
 }
 
 //Прочитать тип топлива
-const string Engine::getFuel() {
+string Engine::getFuel() const {
 	return Fuel;
 }
 
@@ -61,7 +61,7 @@ unsigned Engine::setResource(unsigned R) {
 }
 
 //Прочитать максимальный пробег
-const unsigned Engine::getResource() {
+unsigned Engine::getResource() const {
 	return Resource;
 }
 
@@ -74,7 +74,7 @@ void Engine::setTypeOil(const string &TO) {
 }
 
 //Прочитать тип масла
-const string Engine::getTypeOil() {
+string Engine::getTypeOil() const {
 	return TypeOil;
 }
 
@@ -87,7 +87,7 @@ void Engine::setPowerDVS(const string &PDVS) {
 }
 
 //Прочитать мощность ДВС
-const string Engine::getPowerDVS() {
+string Engine::getPowerDVS() const {
 	return PowerDVS;
 }
 
@@ -100,7 +100,7 @@ unsigned Engine::setExpenditure(unsigned E) {
 }
 
 //Прочитать расход топлива
-const unsigned Engine::getExpenditure() {
+unsigned Engine::getExpenditure() const {
 	return Expenditure;
 }
 
@@ -113,7 +113,7 @@ void Engine::setModelEngine(const string &ME) {
 }
 
 //Прочитать модель двигателя
-const string Engine::getModelEngine() {
+string Engine::getModelEngine() const {
 	return ModelEngine;
 }
 

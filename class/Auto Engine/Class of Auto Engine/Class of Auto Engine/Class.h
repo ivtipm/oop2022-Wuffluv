@@ -29,14 +29,14 @@ public:
 	void setModelEngine(const string &ME);//Задать модель двигателя
 
 	//Геттеры
-	const string getEngineCapacity();//Прочитать объем двигателя
-	const string getPowerSupplySystem();//Прочитать систему питания
-	const string getFuel();//Прочитать тип топлива
-	const unsigned getResource();//Прочитать маскимальный пробег
-	const string getTypeOil();//Прочитать тип масла
-	const string getPowerDVS();//Прочитать мощность ДВС
-	const unsigned getExpenditure();//Прочитать расход топлива
-	const string getModelEngine();//Прочитать модель двигателя
+	string getEngineCapacity() const;//Прочитать объем двигателя
+	string getPowerSupplySystem() const;//Прочитать систему питания
+	string getFuel() const;//Прочитать тип топлива
+	unsigned getResource() const;//Прочитать маскимальный пробег
+	string getTypeOil() const;//Прочитать тип масла
+	string getPowerDVS() const;//Прочитать мощность ДВС
+	unsigned getExpenditure() const;//Прочитать расход топлива
+	string getModelEngine() const;//Прочитать модель двигателя
 
 	//Вывод данных
 	string to_string();
