@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Class of Auto Engine.cpp" />
-    <ClCompile Include="UnitClass.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Engine.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Class.h" />
+    <ClInclude Include="Engine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

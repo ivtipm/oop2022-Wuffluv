@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Class of Auto Engine.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="UnitClass.cpp">
+    <ClCompile Include="Engine.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Class.h">
+    <ClInclude Include="Engine.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
