@@ -56,7 +56,7 @@ string Engine::getFuel() const {
 }
 
 //Задать маскимальный пробег
-unsigned Engine::setResource(unsigned R) {
+float Engine::setResource(unsigned R) {
 	if (R == 0)
 		throw invalid_argument("Error: Resource = 0");
 	else
@@ -64,7 +64,7 @@ unsigned Engine::setResource(unsigned R) {
 }
 
 //Прочитать максимальный пробег
-unsigned Engine::getResource() const {
+float Engine::getResource() const {
 	return Resource;
 }
 
@@ -95,7 +95,7 @@ string Engine::getPowerDVS() const {
 }
 
 //Задать расход топлива
-unsigned Engine::setExpenditure(unsigned E) {
+float Engine::setExpenditure(unsigned E) {
 	if (E == 0)
 		throw invalid_argument("Error: Expenditure = 0");
 	else
@@ -103,7 +103,7 @@ unsigned Engine::setExpenditure(unsigned E) {
 }
 
 //Прочитать расход топлива
-unsigned Engine::getExpenditure() const {
+float Engine::getExpenditure() const {
 	return Expenditure;
 }
 
@@ -128,7 +128,7 @@ string Engine::to_string() {
 		"\nFuel: " + Fuel +
 		"\nResource: " + std::to_string(Resource) +
 		"\nType of Oil: " + TypeOil +
-		"\nPower DVS: " + PowerDVS;
+		"\nPower DVS: " + PowerDVS + 
 		"\nExpenditure: " + std::to_string(Expenditure);
 }
 

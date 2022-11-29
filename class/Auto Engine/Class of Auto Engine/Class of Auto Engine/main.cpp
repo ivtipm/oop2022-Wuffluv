@@ -19,7 +19,7 @@ int main()
 	AutoEngine.setResource(300000);// Максимальный пробег
 	AutoEngine.setTypeOil("5W-30");// Тип масла
 	AutoEngine.setPowerDVS("115 l.f");// Мощность ДВС
-	AutoEngine.setExpenditure(9);// Расход топлива
+	AutoEngine.setExpenditure(9.2);// Расход топлива
 
 	cout << AutoEngine.to_string() << endl;//Вывод данных
 }
