@@ -60,6 +60,9 @@ public:
 	/// Деструктор 
 	~Helicopter();
 
+	/// Задать параметры из основного класса
+	void set_parametr(string oil1, float weight1, float speed1);
+
 	/// Виртуальный вывод в одну строку
 	string toString() override;
 
@@ -108,5 +111,5 @@ public:
 	void set_purposeA(string purposeA1);
 
 	/// Получить назначение автомобиля
-	string get_purposeA1();
+	string get_purposeA();
 };
