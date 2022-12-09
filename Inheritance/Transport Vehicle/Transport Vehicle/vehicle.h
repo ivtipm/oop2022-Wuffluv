@@ -9,21 +9,36 @@ using namespace std;
 class Transport_Vehicle {
 protected:
 	string oil; /// Топливо транспорта
+	string typeOfVehicle; /// Тип транспорта
+	string purpose; /// Назначение транспорта
 	float weight; /// Масса 
-	float speed; /// Скорость
+	float MaxSpeed; /// Максимальная скорость
+	
 
 public:
 	/// Конструктор без параметров
 	Transport_Vehicle();
 
 	/// Конструктор с параметрами
-	Transport_Vehicle(string oil1, float weight1, float speed1);
+	Transport_Vehicle(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1);
 
 	/// Деструктор
 	~Transport_Vehicle();
 
 	/// Виртуальный вывод в одну строку
 	virtual string toString();
+
+	/// Задать тип транспорта
+	void set_typeOfVehicle(string typeOfVehicle1);
+
+	/// Получить тип транспорта
+	string get_typeOfVehicle();
+
+	/// Задать назначение транспорта
+	void set_purpose(string purpose1);
+
+	/// Получить назначение транспорта
+	string get_purpose();
 
 	/// Задать топливо
 	void set_oil(string oil1);
@@ -38,7 +53,7 @@ public:
 	float get_weight();
 
 	/// Задать скорость
-	void set_speed(float speed1);
+	void set_speed(float MaxSpeed1);
 
 	/// Получить скорость
 	float get_speed();
@@ -47,69 +62,55 @@ public:
 /// Класс вертолёт
 class Helicopter : public Transport_Vehicle {
 private:
-	string typeOfHelicopter; /// Тип вертолета
-	string purposeH; /// Назначение вертолета
+	float maxHigh; /// Максимальный уровень полета
 
 public:
 	/// Конструктор без параметров 
 	Helicopter();
 
 	/// Конструктор с параметрами
-	Helicopter(string typeOfHelicopter1, string purposeH1);
+	Helicopter(float maxHigh1);
 
 	/// Деструктор 
 	~Helicopter();
 
 	/// Задать параметры из основного класса
-	void set_parametr(string oil1, float weight1, float speed1);
+	void set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1);
 
 	/// Виртуальный вывод в одну строку
 	string toString() override;
 
-	/// Задать тип вертолета
-	void set_typeOfHelicopter(string typeOfHelicopter1);
+	/// Задать максимальный уровень полета
+	void set_maxHigh(float maxHigh1);
 
-	/// Получить тип вертолета
-	string get_typeOfHelicopter();
-
-	/// Задать назначение вертолета
-	void set_purposeH(string purposeH1);
-
-	/// Получить назначение вертолета
-	string get_purposeH();
+	/// Получить маскимальный уровень полета
+	float get_maxHigh();
 };
 
 /// Класс автомобиль
 class Auto : public Transport_Vehicle {
 protected:
-	string typeOfAuto; /// Тип автомобиля
-	string purposeA; /// Назначение автомобиля
+	float door; /// Количество дверей
 
 public:
 	/// Конструктор без параметров 
 	Auto();
 
 	/// Конструктор с параметрами
-	Auto(string typeOfAuto1, string purposeA1);
+	Auto(float door1);
 
 	/// Деструктор
 	~Auto();
 
 	/// Задать параметры из основного класса
-	void set_parametr(string oil1, float weight1, float speed1);
+	void set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1);
 
 	/// Виртуальный вывод в одну строку
 	string toString() override;
 
-	/// Задать тип автомобиля
-	void set_typeOfAuto(string typeOfAuto1);
+	/// Задать количество дверей
+	void set_door(float door1);
 
-	/// Получить тип автомобиля
-	string get_typeOfAuto();
-
-	/// Задать назначение автомобиля
-	void set_purposeA(string purposeA1);
-
-	/// Получить назначение автомобиля
-	string get_purposeA();
+	/// Получить количество дверей
+	float get_door();
 };
