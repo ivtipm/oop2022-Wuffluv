@@ -1,6 +1,10 @@
 /// @author Ðû÷êîâ Ð.Â.
 /// Çàãîëîâî÷íûé ôàéë 
 
+
+
+/////////////////////////////
+
 #include <iostream>
 
 using namespace std;
