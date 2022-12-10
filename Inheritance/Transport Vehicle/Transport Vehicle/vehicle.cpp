@@ -19,12 +19,13 @@ Transport_Vehicle::Transport_Vehicle() {
 
 /// Êîíñòðóêòîð ñ ïàðàìåòðàìè
 Transport_Vehicle::Transport_Vehicle(string oil1, string typeOfVehicle1, string purpose1, float weight1, float speed1) {
-	if (oil1 == "") throw invalid_argument("Error: field is empty");
+	set_oil(oil1);
+	// todo: 
 	if (typeOfVehicle1 == "") throw invalid_argument("Error: field is empty");
 	if (purpose1 == "") throw invalid_argument("Error: field is empty");
 	if (weight1 < 0) throw invalid_argument("Error: field size < 0");
 	if (speed1 < 0) throw invalid_argument("Error: field size < 0");
-	oil = oil1;
+
 	typeOfVehicle = typeOfVehicle1;
 	purpose = purpose1;
 	weight = weight1;
@@ -32,7 +33,7 @@ Transport_Vehicle::Transport_Vehicle(string oil1, string typeOfVehicle1, string 
 }
 
 /// Äåñòðóêòîð
-Transport_Vehicle::~Transport_Vehicle(){}
+Transport_Vehicle::~Transport_Vehicle() {}
 
 /// Âèðòóàëüíûé âûâîä â îäíó ñòðîêó
 string Transport_Vehicle::toString() {
@@ -46,7 +47,7 @@ void Transport_Vehicle::set_oil(string oil1) {
 }
 
 /// Ïîëó÷èòü òîïëèâî
-string Transport_Vehicle::get_oil() {
+string Transport_Vehicle::get_oil() const {
 	return oil;
 }
 
@@ -57,7 +58,7 @@ void Transport_Vehicle::set_typeOfVehicle(string typeOfVehicle1) {
 }
 
 /// Ïîëó÷èòü òèï òðàíñïîðòà
-string Transport_Vehicle::get_typeOfVehicle() {
+string Transport_Vehicle::get_typeOfVehicle() const {
 	return typeOfVehicle;
 }
 
@@ -68,7 +69,7 @@ void Transport_Vehicle::set_purpose(string purpose1) {
 }
 
 /// Ïîëó÷èòü íàçíà÷åíèå òðàíñïîðòà
-string Transport_Vehicle::get_purpose() {
+string Transport_Vehicle::get_purpose() const {
 	return purpose;
 }
 
@@ -102,12 +103,13 @@ Helicopter::Helicopter() {
 }
 
 /// Êîíñòðóêòîð ñ ïàðàìåòðàìè
-Helicopter::Helicopter(float maxHigh1){
+Helicopter::Helicopter(float maxHigh1) {
 	if (maxHigh1 < 0) throw invalid_argument("Error: field is < 0");
 	maxHigh = maxHigh1;
 }
 
 /// Äåñòðóêòîð
+Helicopter::~Helicopter() {};
 
 /// Çàäàòü ïàðàìåòðû èç îñíîâíîãî êëàññà
 void Helicopter::set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1) {
@@ -125,35 +127,39 @@ void Helicopter::set_parametr(string oil1, string typeOfVehicle1, string purpose
 
 /// Âèðòóàëüíûé âûâîä â îäíó ñòðîêó
 string Helicopter::toString() {
-	return "Maximum lifting level " + std::to_string(maxHigh); 
+
+	return Transport_Vehicle::toString() + "; Maximum lifting level " + std::to_string(maxHigh);
 }
 
 /// Çàäàòü ìàñêèìàëüíûé óðîâåíü ïîäúåìà âåðòîëåòà
-void Helicopter::set_maxHigh(const float &maxHigh1) {
+void Helicopter::set_maxHigh(const float maxHigh1) {
 	if (maxHigh1 < 0) throw invalid_argument("Error: field is empty");
 	maxHigh = maxHigh1;
 }
 
 /// Ïîëó÷èòü òèï âåðòîë¸òà
-float Helicopter::get_maxHigh() const{
+float Helicopter::get_maxHigh() const {
 	return maxHigh;
 }
+
+
 
 
 /// Êëàññ àâòîìîáèëü
 /// Êîíñòðóêòîð áåç ïàðàìåòðîâ
 Auto::Auto() {
-	door == 4; /// Êîëè÷åñòâî äâåðåé
+	door = 4; /// Êîëè÷åñòâî äâåðåé
 }
 
+
 /// Êîíñòðóêòîð ñ ïàðàìåòðàìè
-Auto::Auto(float door1) {
-	if (door <= 0) throw invalid_argument("Error: field is <= 0");
+Auto::Auto(int door1) {
+	if (door1 <= 0) throw invalid_argument("Error: field is <= 0");
 	door = door1;
 }
 
 /// Äåñòðóêòîð
-Auto::~Auto(){}
+Auto::~Auto() {};
 
 /// Çàäàòü ïàðàìåòðû èç îñíîâíîãî êëàññà
 void Auto::set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1) {
@@ -171,16 +177,16 @@ void Auto::set_parametr(string oil1, string typeOfVehicle1, string purpose1, flo
 
 /// Âèðòóàëüíûé âûâîä â îäíó ñòðîêó
 string Auto::toString() {
-	return "Count of doors " + std::to_string(door) +"; " + Transport_Vehicle::toString();
+	return "Count of doors " + std::to_string(door) + "; " + Transport_Vehicle::toString();
 }
 
 /// Çàäàòü êîëè÷åñòâî äâåðåé
-void Auto::set_door(const float &door1){
+void Auto::set_door(const int door1) {
 	if (door1 <= 0) throw invalid_argument("Error: field is <= 0");
 	door = door1;
 }
 
 /// Ïîëó÷èòü êîëè÷åñòâî äâåðåé
-float Auto::get_door() const {
+int Auto::get_door() const {
 	return door;
 }

@@ -1,10 +1,6 @@
 /// @author Ðû÷êîâ Ð.Â.
 /// Çàãîëîâî÷íûé ôàéë 
 
-
-
-/////////////////////////////
-
 #include <iostream>
 
 using namespace std;
@@ -17,7 +13,7 @@ protected:
 	string purpose; /// Íàçíà÷åíèå òðàíñïîðòà
 	float weight; /// Ìàññà 
 	float MaxSpeed; /// Ìàêñèìàëüíàÿ ñêîðîñòü
-	
+
 
 public:
 	/// Êîíñòðóêòîð áåç ïàðàìåòðîâ
@@ -36,19 +32,19 @@ public:
 	void set_typeOfVehicle(string typeOfVehicle1);
 
 	/// Ïîëó÷èòü òèï òðàíñïîðòà
-	string get_typeOfVehicle();
+	string get_typeOfVehicle() const;
 
 	/// Çàäàòü íàçíà÷åíèå òðàíñïîðòà
 	void set_purpose(string purpose1);
 
 	/// Ïîëó÷èòü íàçíà÷åíèå òðàíñïîðòà
-	string get_purpose();
+	string get_purpose() const;
 
 	/// Çàäàòü òîïëèâî
 	void set_oil(string oil1);
 
 	/// Ïîëó÷èòü òîïëèâî
-	string get_oil();
+	string get_oil() const;
 
 	/// Çàäàòü ìàññó
 	void set_weight(float weight1);
@@ -85,7 +81,7 @@ public:
 	string toString() override;
 
 	/// Çàäàòü ìàêñèìàëüíûé óðîâåíü ïîëåòà
-	void set_maxHigh(const float &maxHigh1);
+	void set_maxHigh(const float maxHigh1);
 
 	/// Ïîëó÷èòü ìàñêèìàëüíûé óðîâåíü ïîëåòà
 	float get_maxHigh() const;
@@ -94,14 +90,14 @@ public:
 /// Êëàññ àâòîìîáèëü
 class Auto : public Transport_Vehicle {
 protected:
-	float door; /// Êîëè÷åñòâî äâåðåé
+	int door; /// Êîëè÷åñòâî äâåðåé
 
 public:
 	/// Êîíñòðóêòîð áåç ïàðàìåòðîâ 
 	Auto();
 
 	/// Êîíñòðóêòîð ñ ïàðàìåòðàìè
-	Auto(float door1);
+	Auto(int door1);
 
 	/// Äåñòðóêòîð
 	~Auto();
@@ -113,8 +109,8 @@ public:
 	string toString() override;
 
 	/// Çàäàòü êîëè÷åñòâî äâåðåé
-	void set_door(const float &door1);
+	void set_door(const int door1);
 
 	/// Ïîëó÷èòü êîëè÷åñòâî äâåðåé
-	float get_door() const;
+	int get_door() const;
 };

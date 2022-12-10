@@ -12,8 +12,8 @@ int main() {
 		Transport_Vehicle Transport("Avia and AI", "Civil and Army", "Drive, fly and help", 11000, 300);
 		cout << Transport.toString() << endl << endl;
 
-		Helicopter Helicopter1(6000);
-		Helicopter1.set_parametr("Avia", "civil", "fly", 11000, 350);
+		Helicopter Helicopter1(6000.0);
+		Helicopter1.set_parametr("Avia", "civil", "fly", 11000.0, 350.0);
 		cout << Helicopter1.toString() << endl;
 
 		Helicopter Helicopter2;
@@ -47,5 +47,4 @@ int main() {
 	catch (invalid_argument e) {
 		cout << e.what();
 	}
-	
 }
