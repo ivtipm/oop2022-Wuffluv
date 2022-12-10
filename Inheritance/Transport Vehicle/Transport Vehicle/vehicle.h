@@ -50,13 +50,13 @@ public:
 	void set_weight(float weight1);
 
 	/// Получить массу
-	float get_weight();
+	float get_weight() const;
 
 	/// Задать скорость
 	void set_speed(float MaxSpeed1);
 
 	/// Получить скорость
-	float get_speed();
+	float get_speed() const;
 };
 
 /// Класс вертолёт
@@ -81,10 +81,10 @@ public:
 	string toString() override;
 
 	/// Задать максимальный уровень полета
-	void set_maxHigh(float maxHigh1);
+	void set_maxHigh(const float &maxHigh1);
 
 	/// Получить маскимальный уровень полета
-	float get_maxHigh();
+	float get_maxHigh() const;
 };
 
 /// Класс автомобиль
@@ -109,8 +109,8 @@ public:
 	string toString() override;
 
 	/// Задать количество дверей
-	void set_door(float door1);
+	void set_door(const float &door1);
 
 	/// Получить количество дверей
-	float get_door();
+	float get_door() const;
 };

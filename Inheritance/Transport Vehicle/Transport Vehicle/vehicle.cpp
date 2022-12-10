@@ -17,7 +17,6 @@ Transport_Vehicle::Transport_Vehicle() {
 	MaxSpeed = 200.0; /// Скорость 
 }
 
-
 /// Конструктор с параметрами
 Transport_Vehicle::Transport_Vehicle(string oil1, string typeOfVehicle1, string purpose1, float weight1, float speed1) {
 	if (oil1 == "") throw invalid_argument("Error: field is empty");
@@ -32,16 +31,13 @@ Transport_Vehicle::Transport_Vehicle(string oil1, string typeOfVehicle1, string 
 	MaxSpeed = speed1;
 }
 
-
 /// Деструктор
 Transport_Vehicle::~Transport_Vehicle(){}
-
 
 /// Виртуальный вывод в одну строку
 string Transport_Vehicle::toString() {
 	return "Oil - " + oil + "; " + "Type of vehicle - " + typeOfVehicle + "; " + "Purpose - " + purpose + "; " + "Weight - " + std::to_string(weight) + "; " + "Speed - " + std::to_string(MaxSpeed) + "; ";
 }
-
 
 /// Задать топливо
 void Transport_Vehicle::set_oil(string oil1) {
@@ -49,12 +45,10 @@ void Transport_Vehicle::set_oil(string oil1) {
 	oil = oil1;
 }
 
-
 /// Получить топливо
 string Transport_Vehicle::get_oil() {
 	return oil;
 }
-
 
 /// Задать тип транспорта
 void Transport_Vehicle::set_typeOfVehicle(string typeOfVehicle1) {
@@ -62,12 +56,10 @@ void Transport_Vehicle::set_typeOfVehicle(string typeOfVehicle1) {
 	typeOfVehicle = typeOfVehicle1;
 }
 
-
 /// Получить тип транспорта
 string Transport_Vehicle::get_typeOfVehicle() {
 	return typeOfVehicle;
 }
-
 
 /// Задать назначение транспорта
 void Transport_Vehicle::set_purpose(string purpose1) {
@@ -75,12 +67,10 @@ void Transport_Vehicle::set_purpose(string purpose1) {
 	purpose = purpose1;
 }
 
-
 /// Получить назначение транспорта
 string Transport_Vehicle::get_purpose() {
 	return purpose;
 }
-
 
 /// Задать массу
 void Transport_Vehicle::set_weight(float weight1) {
@@ -88,12 +78,10 @@ void Transport_Vehicle::set_weight(float weight1) {
 	weight = weight1;
 }
 
-
 /// Получить массу
-float Transport_Vehicle::get_weight() {
+float Transport_Vehicle::get_weight() const {
 	return weight;
 }
-
 
 /// Задать скорость
 void Transport_Vehicle::set_speed(float MaxSpeed1) {
@@ -101,9 +89,8 @@ void Transport_Vehicle::set_speed(float MaxSpeed1) {
 	MaxSpeed = MaxSpeed1;
 }
 
-
 /// Получить скорость
-float Transport_Vehicle::get_speed() {
+float Transport_Vehicle::get_speed() const {
 	return MaxSpeed;
 }
 
@@ -114,16 +101,13 @@ Helicopter::Helicopter() {
 	maxHigh = 6000; /// Максимальный уровень подъема вертолёта
 }
 
-
 /// Конструктор с параметрами
 Helicopter::Helicopter(float maxHigh1){
 	if (maxHigh1 < 0) throw invalid_argument("Error: field is < 0");
 	maxHigh = maxHigh1;
 }
 
-
 /// Деструктор
-
 
 /// Задать параметры из основного класса
 void Helicopter::set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1) {
@@ -145,13 +129,13 @@ string Helicopter::toString() {
 }
 
 /// Задать маскимальный уровень подъема вертолета
-void Helicopter::set_maxHigh(float maxHigh1) {
+void Helicopter::set_maxHigh(const float &maxHigh1) {
 	if (maxHigh1 < 0) throw invalid_argument("Error: field is empty");
 	maxHigh = maxHigh1;
 }
 
 /// Получить тип вертолёта
-float Helicopter::get_maxHigh(){
+float Helicopter::get_maxHigh() const{
 	return maxHigh;
 }
 
@@ -162,17 +146,14 @@ Auto::Auto() {
 	door == 4; /// Количество дверей
 }
 
-
 /// Конструктор с параметрами
 Auto::Auto(float door1) {
 	if (door <= 0) throw invalid_argument("Error: field is <= 0");
 	door = door1;
 }
 
-
 /// Деструктор
 Auto::~Auto(){}
-
 
 /// Задать параметры из основного класса
 void Auto::set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1) {
@@ -188,19 +169,18 @@ void Auto::set_parametr(string oil1, string typeOfVehicle1, string purpose1, flo
 	MaxSpeed = MaxSpeed1;
 }
 
-
 /// Виртуальный вывод в одну строку
 string Auto::toString() {
 	return "Count of doors " + std::to_string(door) +"; " + Transport_Vehicle::toString();
 }
 
 /// Задать количество дверей
-void Auto::set_door(float door1){
+void Auto::set_door(const float &door1){
 	if (door1 <= 0) throw invalid_argument("Error: field is <= 0");
 	door = door1;
 }
 
 /// Получить количество дверей
-float Auto::get_door() {
+float Auto::get_door() const {
 	return door;
 }

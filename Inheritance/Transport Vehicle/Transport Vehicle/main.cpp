@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
 	try {
-		Transport_Vehicle Transport("Avia and AI", "Civil and Army", "Drive, fly and help", 3000-11000, 300);
+		Transport_Vehicle Transport("Avia and AI", "Civil and Army", "Drive, fly and help", 11000, 300);
 		cout << Transport.toString() << endl << endl;
 
 		Helicopter Helicopter1(6000);
