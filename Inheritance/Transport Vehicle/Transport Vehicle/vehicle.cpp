@@ -1,5 +1,5 @@
-/// @author Рычков Р.В.
-/// Класс Транспортное средство, подклассы Вертолет и Автомобиль
+/// @author ГђГ»Г·ГЄГ®Гў Гђ.Г‚.
+/// ГЉГ«Г Г±Г± Г’Г°Г Г­Г±ГЇГ®Г°ГІГ­Г®ГҐ Г±Г°ГҐГ¤Г±ГІГўГ®, ГЇГ®Г¤ГЄГ«Г Г±Г±Г» Г‚ГҐГ°ГІГ®Г«ГҐГІ ГЁ ГЂГўГІГ®Г¬Г®ГЎГЁГ«Гј
 
 #include <iostream>
 #include <exception>
@@ -8,16 +8,16 @@
 
 using namespace std;
 
-/// Конструктор без параметров
+/// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЎГҐГ§ ГЇГ Г°Г Г¬ГҐГІГ°Г®Гў
 Transport_Vehicle::Transport_Vehicle() {
-	oil = "Petrol"; /// Чем заправляются
+	oil = "Petrol"; /// Г—ГҐГ¬ Г§Г ГЇГ°Г ГўГ«ГїГѕГІГ±Гї
 	typeOfVehicle = "Civil";
 	purpose = "Movement";
-	weight = 120.0; /// Сколько заправляются
-	MaxSpeed = 200.0; /// Скорость 
+	weight = 120.0; /// Г‘ГЄГ®Г«ГјГЄГ® Г§Г ГЇГ°Г ГўГ«ГїГѕГІГ±Гї
+	MaxSpeed = 200.0; /// Г‘ГЄГ®Г°Г®Г±ГІГј 
 }
 
-/// Конструктор с параметрами
+/// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± ГЇГ Г°Г Г¬ГҐГІГ°Г Г¬ГЁ
 Transport_Vehicle::Transport_Vehicle(string oil1, string typeOfVehicle1, string purpose1, float weight1, float speed1) {
 	if (oil1 == "") throw invalid_argument("Error: field is empty");
 	if (typeOfVehicle1 == "") throw invalid_argument("Error: field is empty");
@@ -31,85 +31,85 @@ Transport_Vehicle::Transport_Vehicle(string oil1, string typeOfVehicle1, string 
 	MaxSpeed = speed1;
 }
 
-/// Деструктор
+/// Г„ГҐГ±ГІГ°ГіГЄГІГ®Г°
 Transport_Vehicle::~Transport_Vehicle(){}
 
-/// Виртуальный вывод в одну строку
+/// Г‚ГЁГ°ГІГіГ Г«ГјГ­Г»Г© ГўГ»ГўГ®Г¤ Гў Г®Г¤Г­Гі Г±ГІГ°Г®ГЄГі
 string Transport_Vehicle::toString() {
 	return "Oil - " + oil + "; " + "Type of vehicle - " + typeOfVehicle + "; " + "Purpose - " + purpose + "; " + "Weight - " + std::to_string(weight) + "; " + "Speed - " + std::to_string(MaxSpeed) + "; ";
 }
 
-/// Задать топливо
+/// Г‡Г Г¤Г ГІГј ГІГ®ГЇГ«ГЁГўГ®
 void Transport_Vehicle::set_oil(string oil1) {
 	if (oil1 == "") throw invalid_argument("Error: field is empty");
 	oil = oil1;
 }
 
-/// Получить топливо
+/// ГЏГ®Г«ГіГ·ГЁГІГј ГІГ®ГЇГ«ГЁГўГ®
 string Transport_Vehicle::get_oil() {
 	return oil;
 }
 
-/// Задать тип транспорта
+/// Г‡Г Г¤Г ГІГј ГІГЁГЇ ГІГ°Г Г­Г±ГЇГ®Г°ГІГ 
 void Transport_Vehicle::set_typeOfVehicle(string typeOfVehicle1) {
 	if (typeOfVehicle1 == "") throw invalid_argument("Error: field is empty");
 	typeOfVehicle = typeOfVehicle1;
 }
 
-/// Получить тип транспорта
+/// ГЏГ®Г«ГіГ·ГЁГІГј ГІГЁГЇ ГІГ°Г Г­Г±ГЇГ®Г°ГІГ 
 string Transport_Vehicle::get_typeOfVehicle() {
 	return typeOfVehicle;
 }
 
-/// Задать назначение транспорта
+/// Г‡Г Г¤Г ГІГј Г­Г Г§Г­Г Г·ГҐГ­ГЁГҐ ГІГ°Г Г­Г±ГЇГ®Г°ГІГ 
 void Transport_Vehicle::set_purpose(string purpose1) {
 	if (purpose1 == "") throw invalid_argument("Error: field is empty");
 	purpose = purpose1;
 }
 
-/// Получить назначение транспорта
+/// ГЏГ®Г«ГіГ·ГЁГІГј Г­Г Г§Г­Г Г·ГҐГ­ГЁГҐ ГІГ°Г Г­Г±ГЇГ®Г°ГІГ 
 string Transport_Vehicle::get_purpose() {
 	return purpose;
 }
 
-/// Задать массу
+/// Г‡Г Г¤Г ГІГј Г¬Г Г±Г±Гі
 void Transport_Vehicle::set_weight(float weight1) {
 	if (weight1 <= 0) throw invalid_argument("Error: field size <= 0");
 	weight = weight1;
 }
 
-/// Получить массу
+/// ГЏГ®Г«ГіГ·ГЁГІГј Г¬Г Г±Г±Гі
 float Transport_Vehicle::get_weight() const {
 	return weight;
 }
 
-/// Задать скорость
+/// Г‡Г Г¤Г ГІГј Г±ГЄГ®Г°Г®Г±ГІГј
 void Transport_Vehicle::set_speed(float MaxSpeed1) {
 	if (MaxSpeed1 < 0) throw invalid_argument("Error: field size < 0");
 	MaxSpeed = MaxSpeed1;
 }
 
-/// Получить скорость
+/// ГЏГ®Г«ГіГ·ГЁГІГј Г±ГЄГ®Г°Г®Г±ГІГј
 float Transport_Vehicle::get_speed() const {
 	return MaxSpeed;
 }
 
 
-/// Класс вертолёт
-/// Конструктор без параметров
+/// ГЉГ«Г Г±Г± ГўГҐГ°ГІГ®Г«ВёГІ
+/// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЎГҐГ§ ГЇГ Г°Г Г¬ГҐГІГ°Г®Гў
 Helicopter::Helicopter() {
-	maxHigh = 6000; /// Максимальный уровень подъема вертолёта
+	maxHigh = 6000; /// ГЊГ ГЄГ±ГЁГ¬Г Г«ГјГ­Г»Г© ГіГ°Г®ГўГҐГ­Гј ГЇГ®Г¤ГєГҐГ¬Г  ГўГҐГ°ГІГ®Г«ВёГІГ 
 }
 
-/// Конструктор с параметрами
+/// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± ГЇГ Г°Г Г¬ГҐГІГ°Г Г¬ГЁ
 Helicopter::Helicopter(float maxHigh1){
 	if (maxHigh1 < 0) throw invalid_argument("Error: field is < 0");
 	maxHigh = maxHigh1;
 }
 
-/// Деструктор
+/// Г„ГҐГ±ГІГ°ГіГЄГІГ®Г°
 
-/// Задать параметры из основного класса
+/// Г‡Г Г¤Г ГІГј ГЇГ Г°Г Г¬ГҐГІГ°Г» ГЁГ§ Г®Г±Г­Г®ГўГ­Г®ГЈГ® ГЄГ«Г Г±Г±Г 
 void Helicopter::set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1) {
 	if (oil1 == "") throw invalid_argument("Error: field is empty");
 	if (typeOfVehicle == "") throw invalid_argument("Error: field is empty");
@@ -123,39 +123,39 @@ void Helicopter::set_parametr(string oil1, string typeOfVehicle1, string purpose
 	MaxSpeed = MaxSpeed1;
 }
 
-/// Виртуальный вывод в одну строку
+/// Г‚ГЁГ°ГІГіГ Г«ГјГ­Г»Г© ГўГ»ГўГ®Г¤ Гў Г®Г¤Г­Гі Г±ГІГ°Г®ГЄГі
 string Helicopter::toString() {
 	return "Maximum lifting level " + std::to_string(maxHigh); 
 }
 
-/// Задать маскимальный уровень подъема вертолета
+/// Г‡Г Г¤Г ГІГј Г¬Г Г±ГЄГЁГ¬Г Г«ГјГ­Г»Г© ГіГ°Г®ГўГҐГ­Гј ГЇГ®Г¤ГєГҐГ¬Г  ГўГҐГ°ГІГ®Г«ГҐГІГ 
 void Helicopter::set_maxHigh(const float &maxHigh1) {
 	if (maxHigh1 < 0) throw invalid_argument("Error: field is empty");
 	maxHigh = maxHigh1;
 }
 
-/// Получить тип вертолёта
+/// ГЏГ®Г«ГіГ·ГЁГІГј ГІГЁГЇ ГўГҐГ°ГІГ®Г«ВёГІГ 
 float Helicopter::get_maxHigh() const{
 	return maxHigh;
 }
 
 
-/// Класс автомобиль
-/// Конструктор без параметров
+/// ГЉГ«Г Г±Г± Г ГўГІГ®Г¬Г®ГЎГЁГ«Гј
+/// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЎГҐГ§ ГЇГ Г°Г Г¬ГҐГІГ°Г®Гў
 Auto::Auto() {
-	door == 4; /// Количество дверей
+	door == 4; /// ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¤ГўГҐГ°ГҐГ©
 }
 
-/// Конструктор с параметрами
+/// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± ГЇГ Г°Г Г¬ГҐГІГ°Г Г¬ГЁ
 Auto::Auto(float door1) {
 	if (door <= 0) throw invalid_argument("Error: field is <= 0");
 	door = door1;
 }
 
-/// Деструктор
+/// Г„ГҐГ±ГІГ°ГіГЄГІГ®Г°
 Auto::~Auto(){}
 
-/// Задать параметры из основного класса
+/// Г‡Г Г¤Г ГІГј ГЇГ Г°Г Г¬ГҐГІГ°Г» ГЁГ§ Г®Г±Г­Г®ГўГ­Г®ГЈГ® ГЄГ«Г Г±Г±Г 
 void Auto::set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1) {
 	if (oil1 == "") throw invalid_argument("Error: field is empty");
 	if (typeOfVehicle1 == "") throw invalid_argument("Error: field is empty");
@@ -169,18 +169,18 @@ void Auto::set_parametr(string oil1, string typeOfVehicle1, string purpose1, flo
 	MaxSpeed = MaxSpeed1;
 }
 
-/// Виртуальный вывод в одну строку
+/// Г‚ГЁГ°ГІГіГ Г«ГјГ­Г»Г© ГўГ»ГўГ®Г¤ Гў Г®Г¤Г­Гі Г±ГІГ°Г®ГЄГі
 string Auto::toString() {
 	return "Count of doors " + std::to_string(door) +"; " + Transport_Vehicle::toString();
 }
 
-/// Задать количество дверей
+/// Г‡Г Г¤Г ГІГј ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¤ГўГҐГ°ГҐГ©
 void Auto::set_door(const float &door1){
 	if (door1 <= 0) throw invalid_argument("Error: field is <= 0");
 	door = door1;
 }
 
-/// Получить количество дверей
+/// ГЏГ®Г«ГіГ·ГЁГІГј ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¤ГўГҐГ°ГҐГ©
 float Auto::get_door() const {
 	return door;
 }
