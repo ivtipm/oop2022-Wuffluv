@@ -1,5 +1,5 @@
-/// @author Ðû÷êîâ Ð.Â.
-/// Êëàññ Òðàíñïîðòíîå ñðåäñòâî, ïîäêëàññû Âåðòîëåò è Àâòîìîáèëü
+/// @author Рычков Р.В.
+/// Класс транспортное средство
 
 #include <iostream>
 #include <exception>
@@ -8,136 +8,148 @@
 
 using namespace std;
 
-/// Êîíñòðóêòîð áåç ïàðàìåòðîâ
-Transport_Vehicle::Transport_Vehicle() {
-	oil = "Petrol"; /// ×åì çàïðàâëÿþòñÿ
-	typeOfVehicle = "Civil";
-	purpose = "Movement";
-	weight = 120.0; /// Ñêîëüêî çàïðàâëÿþòñÿ
-	MaxSpeed = 200.0; /// Ñêîðîñòü 
-}
-
-/// Êîíñòðóêòîð ñ ïàðàìåòðàìè
-Transport_Vehicle::Transport_Vehicle(string oil1, string typeOfVehicle1, string purpose1, float weight1, float speed1) {
+/// Установить параметры из основного класса
+void Transport_Vehicle::set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1) {
 	set_oil(oil1);
-	// todo: 
-	if (typeOfVehicle1 == "") throw invalid_argument("Error: field is empty");
-	if (purpose1 == "") throw invalid_argument("Error: field is empty");
-	if (weight1 < 0) throw invalid_argument("Error: field size < 0");
-	if (speed1 < 0) throw invalid_argument("Error: field size < 0");
-
-	typeOfVehicle = typeOfVehicle1;
-	purpose = purpose1;
-	weight = weight1;
-	MaxSpeed = speed1;
+	set_typeOfVehicle(typeOfVehicle1);
+	set_purpose(purpose1);
+	set_weight(weight1);
+	set_speed(MaxSpeed1);
+	//if (oil1 == "") throw invalid_argument("Error: field is empty");
+	//if (typeOfVehicle == "") throw invalid_argument("Error: field is empty");
+	//if (purpose1 == "") throw invalid_argument("Error: field is empty");
+	//if (weight1 <= 0) throw invalid_argument("Error: field size <= 0");
+	//if (MaxSpeed1 < 0) throw invalid_argument("Error: field size < 0");
+	/// oil = oil1;
+	/// typeOfVehicle = typeOfVehicle1;
+	/// purpose = purpose1;
+	/// weight = weight1;
+	/// MaxSpeed = MaxSpeed1;
 }
 
-/// Äåñòðóêòîð
+/// Конструктор без параметров
+Transport_Vehicle::Transport_Vehicle() {
+	oil = "Petrol"; /// Тип топлива
+	typeOfVehicle = "Civil"; /// Тип транспортного средства
+	purpose = "Movement"; /// Назначение транспорта
+	weight = 120.0; /// Вес
+	MaxSpeed = 200.0; /// Максимальная скорость
+}
+
+/// Конструктор с параметрами
+Transport_Vehicle::Transport_Vehicle(string &oil1, string &typeOfVehicle1, string &purpose1, float weight1, float speed1) {
+	set_parametr(oil1, typeOfVehicle1, purpose1 , weight1,speed1); /// 
+	///set_oil(oil1);
+	///set_typeOfVehicle(typeOfVehicle1);
+	///set_purpose(purpose1);
+	///set_weight(weight1);
+	///set_speed(speed1);
+	// todo: 
+	//if (typeOfVehicle1 == "") throw invalid_argument("Error: field is empty");
+	//if (purpose1 == "") throw invalid_argument("Error: field is empty");
+	//if (weight1 < 0) throw invalid_argument("Error: field size < 0");
+	//if (speed1 < 0) throw invalid_argument("Error: field size < 0");
+	///typeOfVehicle = typeOfVehicle1;
+	///purpose = purpose1;
+	///weight = weight1;
+	///MaxSpeed = speed1;
+}
+
+/// Деструктор
 Transport_Vehicle::~Transport_Vehicle() {}
 
-/// Âèðòóàëüíûé âûâîä â îäíó ñòðîêó
-string Transport_Vehicle::toString() {
+/// Виртуальный вывод в одну строку
+string Transport_Vehicle::toString() const {
 	return "Oil - " + oil + "; " + "Type of vehicle - " + typeOfVehicle + "; " + "Purpose - " + purpose + "; " + "Weight - " + std::to_string(weight) + "; " + "Speed - " + std::to_string(MaxSpeed) + "; ";
 }
 
-/// Çàäàòü òîïëèâî
-void Transport_Vehicle::set_oil(string oil1) {
+/// Установить тип топлива
+void Transport_Vehicle::set_oil(string &oil1) {
 	if (oil1 == "") throw invalid_argument("Error: field is empty");
 	oil = oil1;
 }
 
-/// Ïîëó÷èòü òîïëèâî
+/// Получить тип топлива
 string Transport_Vehicle::get_oil() const {
 	return oil;
 }
 
-/// Çàäàòü òèï òðàíñïîðòà
+/// Установить тип транспорта
 void Transport_Vehicle::set_typeOfVehicle(string typeOfVehicle1) {
 	if (typeOfVehicle1 == "") throw invalid_argument("Error: field is empty");
 	typeOfVehicle = typeOfVehicle1;
 }
 
-/// Ïîëó÷èòü òèï òðàíñïîðòà
+/// Получить тип транспорта
 string Transport_Vehicle::get_typeOfVehicle() const {
 	return typeOfVehicle;
 }
 
-/// Çàäàòü íàçíà÷åíèå òðàíñïîðòà
+/// Установить назначение транспорта
 void Transport_Vehicle::set_purpose(string purpose1) {
 	if (purpose1 == "") throw invalid_argument("Error: field is empty");
 	purpose = purpose1;
 }
 
-/// Ïîëó÷èòü íàçíà÷åíèå òðàíñïîðòà
+/// Вернуть назначение транспорта
 string Transport_Vehicle::get_purpose() const {
 	return purpose;
 }
 
-/// Çàäàòü ìàññó
+/// Установить вес
 void Transport_Vehicle::set_weight(float weight1) {
 	if (weight1 <= 0) throw invalid_argument("Error: field size <= 0");
 	weight = weight1;
 }
 
-/// Ïîëó÷èòü ìàññó
+/// Получить вес
 float Transport_Vehicle::get_weight() const {
 	return weight;
 }
 
-/// Çàäàòü ñêîðîñòü
+/// Установить скорость
 void Transport_Vehicle::set_speed(float MaxSpeed1) {
 	if (MaxSpeed1 < 0) throw invalid_argument("Error: field size < 0");
 	MaxSpeed = MaxSpeed1;
 }
 
-/// Ïîëó÷èòü ñêîðîñòü
+/// Получить скорость
 float Transport_Vehicle::get_speed() const {
 	return MaxSpeed;
 }
 
 
-/// Êëàññ âåðòîë¸ò
-/// Êîíñòðóêòîð áåç ïàðàìåòðîâ
+/// Класс вертолет
+/// Конструктор без параметров
 Helicopter::Helicopter() {
-	maxHigh = 6000; /// Ìàêñèìàëüíûé óðîâåíü ïîäúåìà âåðòîë¸òà
+	///
+	maxHigh = 6000; /// Максимальный уровень подъема
 }
 
-/// Êîíñòðóêòîð ñ ïàðàìåòðàìè
+/// Конструктор с параметрами
 Helicopter::Helicopter(float maxHigh1) {
-	if (maxHigh1 < 0) throw invalid_argument("Error: field is < 0");
+	set_maxHigh(maxHigh1);
+	//if (maxHigh1 < 0) throw invalid_argument("Error: field is < 0");
 	maxHigh = maxHigh1;
 }
 
-/// Äåñòðóêòîð
+/// Деструктор
 Helicopter::~Helicopter() {};
 
-/// Çàäàòü ïàðàìåòðû èç îñíîâíîãî êëàññà
-void Helicopter::set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1) {
-	if (oil1 == "") throw invalid_argument("Error: field is empty");
-	if (typeOfVehicle == "") throw invalid_argument("Error: field is empty");
-	if (purpose1 == "") throw invalid_argument("Error: field is empty");
-	if (weight1 <= 0) throw invalid_argument("Error: field size <= 0");
-	if (MaxSpeed1 < 0) throw invalid_argument("Error: field size < 0");
-	oil = oil1;
-	typeOfVehicle = typeOfVehicle1;
-	purpose = purpose1;
-	weight = weight;
-	MaxSpeed = MaxSpeed1;
-}
 
-/// Âèðòóàëüíûé âûâîä â îäíó ñòðîêó
-string Helicopter::toString() {
+/// Виртуальный вывод в одну строку
+string Helicopter::toString() const {
 
 	return Transport_Vehicle::toString() + "; Maximum lifting level " + std::to_string(maxHigh);
 }
 
-/// Çàäàòü ìàñêèìàëüíûé óðîâåíü ïîäúåìà âåðòîëåòà
+/// Установить максимальный уровень подъема
 void Helicopter::set_maxHigh(const float maxHigh1) {
 	if (maxHigh1 < 0) throw invalid_argument("Error: field is empty");
 	maxHigh = maxHigh1;
 }
 
-/// Ïîëó÷èòü òèï âåðòîë¸òà
+/// Получить максимальный уровень подъема
 float Helicopter::get_maxHigh() const {
 	return maxHigh;
 }
@@ -145,48 +157,35 @@ float Helicopter::get_maxHigh() const {
 
 
 
-/// Êëàññ àâòîìîáèëü
-/// Êîíñòðóêòîð áåç ïàðàìåòðîâ
+/// Класс авто
+/// Конструктор без параметров
 Auto::Auto() {
-	door = 4; /// Êîëè÷åñòâî äâåðåé
+	door = 4; /// Количество дверей
 }
 
 
-/// Êîíñòðóêòîð ñ ïàðàìåòðàìè
+/// Конструктор с параметрами
 Auto::Auto(int door1) {
-	if (door1 <= 0) throw invalid_argument("Error: field is <= 0");
-	door = door1;
+	set_door(door1);
+	//if (door1 <= 0) throw invalid_argument("Error: field is <= 0");
 }
 
-/// Äåñòðóêòîð
+/// Деструктор
 Auto::~Auto() {};
 
-/// Çàäàòü ïàðàìåòðû èç îñíîâíîãî êëàññà
-void Auto::set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1) {
-	if (oil1 == "") throw invalid_argument("Error: field is empty");
-	if (typeOfVehicle1 == "") throw invalid_argument("Error: field is empty");
-	if (purpose1 == "") throw invalid_argument("Error: field is empty");
-	if (weight1 <= 0) throw invalid_argument("Error: field is <= 0");
-	if (MaxSpeed1 < 0) throw invalid_argument("Error: field is < 0");
-	oil = oil1;
-	typeOfVehicle = typeOfVehicle1;
-	purpose = purpose1;
-	weight = weight1;
-	MaxSpeed = MaxSpeed1;
-}
 
-/// Âèðòóàëüíûé âûâîä â îäíó ñòðîêó
-string Auto::toString() {
+/// Виртуальный вывод в одну строку
+string Auto::toString() const {
 	return "Count of doors " + std::to_string(door) + "; " + Transport_Vehicle::toString();
 }
 
-/// Çàäàòü êîëè÷åñòâî äâåðåé
+/// Установить количество дверей
 void Auto::set_door(const int door1) {
 	if (door1 <= 0) throw invalid_argument("Error: field is <= 0");
 	door = door1;
 }
 
-/// Ïîëó÷èòü êîëè÷åñòâî äâåðåé
+/// Получить количество дверей
 int Auto::get_door() const {
 	return door;
 }

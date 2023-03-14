@@ -1,116 +1,114 @@
-/// @author Ðû÷êîâ Ð.Â.
-/// Çàãîëîâî÷íûé ôàéë 
-
+/// @author Рычков Р.В.
+/// Заголовочный файл класса Transport Vehicle
 #include <iostream>
 
 using namespace std;
 
-/// Êëàññ òðàíñïîðòíûå ñðåäñòâà
+/// Класс транспортное средство
 class Transport_Vehicle {
 protected:
-	string oil; /// Òîïëèâî òðàíñïîðòà
-	string typeOfVehicle; /// Òèï òðàíñïîðòà
-	string purpose; /// Íàçíà÷åíèå òðàíñïîðòà
-	float weight; /// Ìàññà 
-	float MaxSpeed; /// Ìàêñèìàëüíàÿ ñêîðîñòü
-
+	string oil; /// Топливо
+	string typeOfVehicle; /// Тип транспорта
+	string purpose; /// Назначение транспорта
+	float weight; /// Вес
+	float MaxSpeed; /// Максимальная скорость
+	/// Protected поля доступны методам класса и производным классам
 
 public:
-	/// Êîíñòðóêòîð áåç ïàðàìåòðîâ
+	/// Конструктор без параметров
 	Transport_Vehicle();
 
-	/// Êîíñòðóêòîð ñ ïàðàìåòðàìè
-	Transport_Vehicle(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1);
+	/// Конструктор с параметрами
+	Transport_Vehicle(string &oil1, string &typeOfVehicle1, string &purpose1, float weight1, float MaxSpeed1);
 
-	/// Äåñòðóêòîð
+	/// Деструктор
 	~Transport_Vehicle();
 
-	/// Âèðòóàëüíûé âûâîä â îäíó ñòðîêó
-	virtual string toString();
+	/// Установить параметры из основного класса
+	void set_parametr(string &oil1, string &typeOfVehicle1, string &purpose1, float weight1, float MaxSpeed1);
 
-	/// Çàäàòü òèï òðàíñïîðòà
-	void set_typeOfVehicle(string typeOfVehicle1);
+	/// Виртуальный вывод в одну строку
+	virtual string toString() const; /// const - не изменяет метод полей класса
 
-	/// Ïîëó÷èòü òèï òðàíñïîðòà
+	/// Установить тип транспорта
+	void set_typeOfVehicle(const string &typeOfVehicle1);
+
+	/// Получить тип транспорта
 	string get_typeOfVehicle() const;
 
-	/// Çàäàòü íàçíà÷åíèå òðàíñïîðòà
-	void set_purpose(string purpose1);
+	/// Установить назначение транспорта
+	void set_purpose(const string &purpose1);///todo: Добавить амперсанты. Добавить ссылку на константы. 
 
-	/// Ïîëó÷èòü íàçíà÷åíèå òðàíñïîðòà
+	/// const string& - ссылка на константу
+
+	/// Получить назначение транспорта
 	string get_purpose() const;
 
-	/// Çàäàòü òîïëèâî
-	void set_oil(string oil1);
+	/// Установить тип топлива
+	void set_oil(const string &oil1);
 
-	/// Ïîëó÷èòü òîïëèâî
+	/// Получить тип топлива
 	string get_oil() const;
 
-	/// Çàäàòü ìàññó
+	/// Установить вес
 	void set_weight(float weight1);
 
-	/// Ïîëó÷èòü ìàññó
+	/// Получить вес
 	float get_weight() const;
 
-	/// Çàäàòü ñêîðîñòü
+	/// Установить скорость
 	void set_speed(float MaxSpeed1);
 
-	/// Ïîëó÷èòü ñêîðîñòü
+	/// Получить скорость
 	float get_speed() const;
 };
 
-/// Êëàññ âåðòîë¸ò
+/// Класс вертолета
 class Helicopter : public Transport_Vehicle {
 private:
-	float maxHigh; /// Ìàêñèìàëüíûé óðîâåíü ïîëåòà
+	float maxHigh; /// Максимальный уровень подъема
 
 public:
-	/// Êîíñòðóêòîð áåç ïàðàìåòðîâ 
+	/// Конструктор без параметров
 	Helicopter();
 
-	/// Êîíñòðóêòîð ñ ïàðàìåòðàìè
+	/// Конструктор с параметрами
 	Helicopter(float maxHigh1);
 
-	/// Äåñòðóêòîð 
+	/// Деструктор
 	~Helicopter();
 
-	/// Çàäàòü ïàðàìåòðû èç îñíîâíîãî êëàññà
-	void set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1);
+	/// Виртуальный вывод в одну строку
+	string toString() const override; /// override - переопределение метода
 
-	/// Âèðòóàëüíûé âûâîä â îäíó ñòðîêó
-	string toString() override;
+	/// Установить максимальный уровень подъема
+	void set_maxHigh(float maxHigh1);
 
-	/// Çàäàòü ìàêñèìàëüíûé óðîâåíü ïîëåòà
-	void set_maxHigh(const float maxHigh1);
-
-	/// Ïîëó÷èòü ìàñêèìàëüíûé óðîâåíü ïîëåòà
+	/// Вернуть максимальный уровень подъема
 	float get_maxHigh() const;
 };
 
-/// Êëàññ àâòîìîáèëü
+/// Класс авто
 class Auto : public Transport_Vehicle {
 protected:
-	int door; /// Êîëè÷åñòâî äâåðåé
+	int door; /// Количество дверей
 
 public:
-	/// Êîíñòðóêòîð áåç ïàðàìåòðîâ 
+	/// Конструктор без параметров
 	Auto();
 
-	/// Êîíñòðóêòîð ñ ïàðàìåòðàìè
+	/// Конструктор с параметрами
 	Auto(int door1);
 
-	/// Äåñòðóêòîð
+	/// Деструктор
 	~Auto();
 
-	/// Çàäàòü ïàðàìåòðû èç îñíîâíîãî êëàññà
-	void set_parametr(string oil1, string typeOfVehicle1, string purpose1, float weight1, float MaxSpeed1);
+	/// Виртуальный вывод в одну строку
+	string toString() const override;
 
-	/// Âèðòóàëüíûé âûâîä â îäíó ñòðîêó
-	string toString() override;
+	/// Установить количество дверей
+	void set_door(int door1);
 
-	/// Çàäàòü êîëè÷åñòâî äâåðåé
-	void set_door(const int door1);
-
-	/// Ïîëó÷èòü êîëè÷åñòâî äâåðåé
+	/// Получить количество дверей
 	int get_door() const;
 };
