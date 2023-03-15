@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -50,13 +50,14 @@
             // 
             // GetData
             // 
+            this.GetData.BackColor = System.Drawing.Color.AntiqueWhite;
             this.GetData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.GetData.Location = new System.Drawing.Point(359, 375);
             this.GetData.Name = "GetData";
             this.GetData.Size = new System.Drawing.Size(161, 74);
             this.GetData.TabIndex = 0;
             this.GetData.Text = "Получить данные";
-            this.GetData.UseVisualStyleBackColor = true;
+            this.GetData.UseVisualStyleBackColor = false;
             this.GetData.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
@@ -196,7 +197,8 @@
             // 
             // ShowData
             // 
-            this.ShowData.BackColor = System.Drawing.Color.RosyBrown;
+            this.ShowData.BackColor = System.Drawing.Color.LightGray;
+            this.ShowData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ShowData.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ShowData.Location = new System.Drawing.Point(264, 12);
             this.ShowData.Name = "ShowData";
