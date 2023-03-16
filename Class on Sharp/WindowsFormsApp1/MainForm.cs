@@ -1,4 +1,6 @@
-﻿using System;
+﻿/// Автор: Рычков Р.В.
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +28,7 @@ namespace WindowsFormsApp1
 
         }
 
+        /// Вывод информации по двигателю автомобиля
         private void button1_Click(object sender, EventArgs e)
         {
             SetEngine();
@@ -38,8 +41,17 @@ namespace WindowsFormsApp1
             ShowData.Text += "Мощность ДВС: " + TextPowerDVS.Text + "\r" + "\n";
             ShowData.Text += "Максимальный пробег: " + TextResource.Text + "\r" + "\n";
             ShowData.Text += "Модель двигателя: " + TextModelEngine.Text + "\r" + "\n";
+            TextEngineCapacity.Clear();
+            TextSupplySystem.Clear();
+            TextFuel.Clear();
+            TextExpenditure.Clear();
+            TextOil.Clear();
+            TextPowerDVS.Clear();
+            TextResource.Clear();
+            TextModelEngine.Clear();
         }
 
+        /// Обработчики 
         private void SetEngine()
         {
             try
@@ -55,7 +67,8 @@ namespace WindowsFormsApp1
             }
              catch (ArgumentException er)
             {
-               // ShowData.Text = er.Message;
+                MessageBox.Show("Неверные данные");
+                
             }  
         }
 
@@ -102,6 +115,23 @@ namespace WindowsFormsApp1
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        /// Вывод автора
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Рычков Родион Викторович" + "\nВМК-21", "Автор");
+        }
+
+        private void ShowData_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        /// Очищение формы от информации
+        private void DropData_Click(object sender, EventArgs e)
+        {
+            ShowData.Clear();
         }
     }
 }
