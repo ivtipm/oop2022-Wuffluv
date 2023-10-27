@@ -33,13 +33,13 @@ namespace WindowsFormsApp1
         {
             SetEngine();
             ShowData.Text += "Информация по двигателю автомобиля:" + "\r" + "\n";
-            ShowData.Text += "Объем двигателя: " + TextEngineCapacity.Text + "\r" + "\n";
+            ShowData.Text += "Объем двигателя: " + TextEngineCapacity.Text + " см^3" + "\r" + "\n";
             ShowData.Text += "Система питания: " + TextSupplySystem.Text + "\r" + "\n";
             ShowData.Text += "Тип топлива: " + TextFuel.Text + "\r" + "\n";
-            ShowData.Text += "Расход топлива: " + TextExpenditure.Text + "\r" + "\n";
+            ShowData.Text += "Расход топлива: " + TextExpenditure.Text + " л./100" + "\r" + "\n";
             ShowData.Text += "Тип масла: " + TextOil.Text + "\r" + "\n";
-            ShowData.Text += "Мощность ДВС: " + TextPowerDVS.Text + "\r" + "\n";
-            ShowData.Text += "Максимальный пробег: " + TextResource.Text + "\r" + "\n";
+            ShowData.Text += "Мощность ДВС: " + TextPowerDVS.Text + " л.с." + "\r" + "\n";
+            ShowData.Text += "Максимальный пробег: " + TextResource.Text + " км." + "\r" + "\n";
             ShowData.Text += "Модель двигателя: " + TextModelEngine.Text + "\r" + "\n";
             TextEngineCapacity.Clear();
             TextSupplySystem.Clear();
