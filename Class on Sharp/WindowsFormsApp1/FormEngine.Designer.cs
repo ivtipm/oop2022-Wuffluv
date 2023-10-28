@@ -235,7 +235,7 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 24);
             this.toolStripMenuItem1.Text = "Автор";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
