@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class Of Engine.cs" />
+    <Compile Include="ClassOfEngine.cs" />
     <Compile Include="FormEngine.cs">
       <SubType>Form</SubType>
     </Compile>
