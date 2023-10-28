@@ -82,6 +82,7 @@
             this.TextEngineCapacity.Name = "TextEngineCapacity";
             this.TextEngineCapacity.Size = new System.Drawing.Size(154, 24);
             this.TextEngineCapacity.TabIndex = 2;
+            this.TextEngineCapacity.Text = "1493";
             this.TextEngineCapacity.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
@@ -100,6 +101,7 @@
             this.TextSupplySystem.Name = "TextSupplySystem";
             this.TextSupplySystem.Size = new System.Drawing.Size(154, 24);
             this.TextSupplySystem.TabIndex = 4;
+            this.TextSupplySystem.Text = "Инжектор";
             // 
             // label3
             // 
@@ -118,6 +120,7 @@
             this.TextFuel.Name = "TextFuel";
             this.TextFuel.Size = new System.Drawing.Size(154, 24);
             this.TextFuel.TabIndex = 6;
+            this.TextFuel.Text = "АИ-92";
             this.TextFuel.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
@@ -136,6 +139,7 @@
             this.TextResource.Name = "TextResource";
             this.TextResource.Size = new System.Drawing.Size(154, 24);
             this.TextResource.TabIndex = 8;
+            this.TextResource.Text = "350000";
             // 
             // label5
             // 
@@ -153,6 +157,7 @@
             this.TextOil.Name = "TextOil";
             this.TextOil.Size = new System.Drawing.Size(154, 24);
             this.TextOil.TabIndex = 10;
+            this.TextOil.Text = "5W-30";
             // 
             // label6
             // 
@@ -170,6 +175,7 @@
             this.TextPowerDVS.Name = "TextPowerDVS";
             this.TextPowerDVS.Size = new System.Drawing.Size(154, 24);
             this.TextPowerDVS.TabIndex = 12;
+            this.TextPowerDVS.Text = "1.6";
             this.TextPowerDVS.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label7
@@ -188,6 +194,7 @@
             this.TextExpenditure.Name = "TextExpenditure";
             this.TextExpenditure.Size = new System.Drawing.Size(154, 24);
             this.TextExpenditure.TabIndex = 14;
+            this.TextExpenditure.Text = "13";
             // 
             // label8
             // 
@@ -206,6 +213,7 @@
             this.TextModelEngine.Name = "TextModelEngine";
             this.TextModelEngine.Size = new System.Drawing.Size(154, 24);
             this.TextModelEngine.TabIndex = 16;
+            this.TextModelEngine.Text = "JZ125";
             this.TextModelEngine.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // ShowData
@@ -228,14 +236,14 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(670, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(670, 30);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 26);
             this.toolStripMenuItem1.Text = "Автор";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
