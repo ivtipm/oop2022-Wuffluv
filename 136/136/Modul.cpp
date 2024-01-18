@@ -11,7 +11,7 @@ namespace MyModule {
     double calculateSum(const vector<double>& numbers) {
         double sum = 0.0;
 
-        // Вычисление суммы абсолютных значений элементов массива
+        // Вычисление суммы значений массива
         for (const double& num : numbers) {
             sum += abs(num);
         }
@@ -32,4 +32,4 @@ namespace MyModule {
         outputFile.close();
     }
 
-} // namespace MyModule
+} 
