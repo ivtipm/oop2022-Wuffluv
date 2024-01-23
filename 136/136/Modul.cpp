@@ -1,13 +1,18 @@
+// @author Rychkov R.V.
+
 #include "Modul.h"
 #include <fstream>
 #include <cmath>
 
 using namespace std;
 
-// Реализация функций из заголовочного файла
 
+// Пространство имен модуля
 namespace MyModule {
 
+    
+    //todo: рандомное заполнение 
+    // функция Вычисления суммы
     double calculateSum(const vector<double>& numbers) {
         double sum = 0.0;
 
@@ -19,6 +24,9 @@ namespace MyModule {
         return sum;
     }
 
+    //todo: чтение
+    //Массив в 1 файл :todo
+    // Функция записи в файл 
     void writeToOutputFile(const string& filename, double result) {
         ofstream outputFile(filename);
 

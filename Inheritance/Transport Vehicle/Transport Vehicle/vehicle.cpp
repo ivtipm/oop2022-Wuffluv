@@ -1,3 +1,5 @@
+// @author Rychkov R.V.
+
 #include <iostream>
 #include <stdexcept>
 #include <string>

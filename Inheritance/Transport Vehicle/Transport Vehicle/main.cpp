@@ -1,4 +1,6 @@
-﻿#include <iostream>
+﻿// @author Rychkov R.V.
+
+#include <iostream>
 #include <stdexcept>
 #include "vehicle.h"
 
@@ -58,5 +60,7 @@ int main() {
         cout << "Error: " << e.what() << endl;
     }
 
+
+    //Добавить ассерты
     return 0;
 }

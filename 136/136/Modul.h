@@ -1,3 +1,5 @@
+// @author Rychkov R.V.
+
 #ifndef MYMODULE_H
 #define MYMODULE_H
 
@@ -6,8 +8,7 @@
 
 using namespace std;
 
-// Заголовочный файл для модуля MyModule
-
+// Пространство имен модуля
 namespace MyModule {
 
     // Функция для вычисления суммы абсолютных значений элементов массива
