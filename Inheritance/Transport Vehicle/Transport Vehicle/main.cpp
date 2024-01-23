@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <cassert>
 #include "vehicle.h"
 
 using namespace std;
@@ -53,14 +54,37 @@ int main() {
         cout << "Transport2 (Helicopter): " << Transport2->toString() << endl;
         cout << "Transport3 (Auto): " << Transport3->toString() << endl;
 
+      
+
+        // Проверка, что создание объекта Transport_Vehicle с корректными параметрами проходит успешно
+        assert(Transport.get_oil() == "Avia and AI");
+        assert(Transport.get_typeOfVehicle() == "Civil and Army");
+        assert(Transport.get_purpose() == "Drive, fly and help");
+        assert(Transport.get_weight() == 11000);
+        assert(Transport.get_speed() == 300);
+
+        // Проверка, что создание объекта Helicopter с корректными параметрами проходит успешно
+        assert(Helicopter1.get_maxHigh() == 6000.0);
+        assert(Helicopter1.get_oil() == "Avia");
+        assert(Helicopter1.get_typeOfVehicle() == "civil");
+        assert(Helicopter1.get_purpose() == "fly");
+        assert(Helicopter1.get_weight() == 11000.0);
+        assert(Helicopter1.get_speed() == 350.0);
+
+        // Проверка, что создание объекта Transport_Vehicle по умолчанию проходит успешно
+        assert(Transport1.get_oil() == "Petrol");
+        assert(Transport1.get_typeOfVehicle() == "Civil");
+        assert(Transport1.get_purpose() == "Movement");
+        assert(Transport1.get_weight() == 120.0);
+        assert(Transport1.get_speed() == 200.0);
+
         delete Transport3; //  Освобождение динамически выделенной памяти
         cout << "---------------------------------------------" << endl;
     }
     catch (const invalid_argument& e) {
         cout << "Error: " << e.what() << endl;
     }
+     
 
-
-    //Добавить ассерты
     return 0;
 }
